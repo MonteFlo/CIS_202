@@ -29,21 +29,5 @@ def NameComp_Creator():
                 NameCompFormatted = NameCompFormatted.rstrip(',')
                 return NameCompFormatted
 
-#FLip_And_Switch Suite
-def FLip_And_Switch():
-    
-    NameCompList = NameComp.split(', ')
-    
-    FullNameFormattedList = ''
-    for Name in NameCompList:
-        NameParts = Name.split()
-        FirstName = NameParts[0]
-        LastName = NameParts[1]
-        FullNameFormatted = (f'{LastName}, {FirstName}; ')
-        FullNameFormattedList += FullNameFormatted
-    FullNameFormattedList = FullNameFormattedList.rstrip()
-    FullNameFormattedList = FullNameFormattedList.rstrip(';')
-    print(FullNameFormattedList)
-     
 #Call Main Function
 main()
