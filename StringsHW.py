@@ -25,13 +25,21 @@ def NameComp_Creator():
 def FLip_And_Switch(NameComp):
     
     NameCompList = NameComp.split(', ')
-    
+    FullNameList = []
     FullNameFormattedList = ''
     for Name in NameCompList:
         NameParts = Name.split()
         FirstName = NameParts[0]
         LastName = NameParts[1]
         FullNameFormatted = (f'{LastName}, {FirstName}; ')
+        FullNameList.append((FullNameFormatted))
+    FullNameFormattedList = Sort_And_Format(FullNameList, FullNameFormattedList)
+    return FullNameFormattedList
+
+#Sort_And_Format Suite
+def Sort_And_Format(FullNameList, FullNameFormattedList):
+    FullNameList.sort()
+    for FullNameFormatted in FullNameList:
         FullNameFormattedList += FullNameFormatted
     FullNameFormattedList = FullNameFormattedList.rstrip()
     FullNameFormattedList = FullNameFormattedList.rstrip(';')
